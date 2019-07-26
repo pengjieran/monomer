@@ -52,7 +52,6 @@ public class TokenFilter implements WebFilter, Ordered {
             if (StringUtils.isNotBlank(token)) {
 
                 token = TokenUtils.getTokenStr(token);
-
                 if (StringUtils.isNotBlank(token)) {
 
                     TokenUtils.AccessToken accessToken = TokenUtils.parseAccessTokenString(token);
