@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2019-07-26
  */
 @RestController
-@RequestMapping("/examplecn/account")
-public class AccountController {
+@RequestMapping("/examplecn/credential")
+public class CredentialController {
 
 }
 

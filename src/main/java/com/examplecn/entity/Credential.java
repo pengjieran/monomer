@@ -3,7 +3,6 @@ package com.examplecn.entity;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
-import java.time.LocalDateTime;
 import com.baomidou.mybatisplus.annotation.TableField;
 import java.io.Serializable;
 import lombok.Data;
@@ -21,35 +20,35 @@ import lombok.experimental.Accessors;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@TableName("t_account")
-public class Account implements Serializable {
+@TableName("t_credential")
+public class Credential implements Serializable {
 
     private static final long serialVersionUID=1L;
 
     @TableId(value = "id", type = IdType.ID_WORKER_STR)
     private Long id;
 
-    @TableField("name")
-    private String name;
+    @TableField("account_id")
+    private Long accountId;
 
-    @TableField("nick_name")
-    private String nickName;
+    @TableField("username")
+    private String username;
 
-    @TableField("gender")
-    private String gender;
+    @TableField("password")
+    private String password;
 
-    @TableField("birthday")
-    private LocalDateTime birthday;
+    @TableField("actived")
+    private Boolean actived;
 
 
     public static final String ID = "id";
 
-    public static final String NAME = "name";
+    public static final String ACCOUNT_ID = "account_id";
 
-    public static final String NICK_NAME = "nick_name";
+    public static final String USERNAME = "username";
 
-    public static final String GENDER = "gender";
+    public static final String PASSWORD = "password";
 
-    public static final String BIRTHDAY = "birthday";
+    public static final String ACTIVED = "actived";
 
 }

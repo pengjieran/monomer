@@ -63,7 +63,7 @@ public class CodeGenerator {
         strategy.setTablePrefix(tablePrefixs);// 此处可以修改为您的表前缀
         strategy.setNaming(NamingStrategy.underline_to_camel);// 表名生成策略
 
-        strategy.setInclude("t_account"); // 需要生成的表,不写就是全部
+        strategy.setInclude("t_account", "t_credential"); // 需要生成的表,不写就是全部
 
         // strategy.setExclude(new String[]{"test"}); // 排除生成的表
         // 自定义实体父类
