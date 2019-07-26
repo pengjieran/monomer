@@ -1,4 +1,6 @@
 spring:
+  application:
+    name: monomer
   datasource:
     druid:
       name: monomer
@@ -29,6 +31,18 @@ spring:
         enabled: true
         url-pattern: /*
         exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*"
+    redis:
+      database: 1
+      host: 10.10.113.47
+      port: 6379
+      password: Ambow99999999
+      timeout: 3600
+      lettuce:
+        pool:
+          min-idle: 10
+          max-active: 10
+          max-idle: 20
+          max-wait: 6000
   profiles:
     active:
     - dev
@@ -39,5 +53,17 @@ server:
     enabled: true
 
 mybatis-plus:
+  configuration:
+    cache-enabled: true
+    map-underscore-to-camel-case: true
   global-config:
     banner: false
+    db-config:
+      table-prefix: t_
+      table-underline: true
+
+logging:
+  level:
+    ROOT: INFO
+  config: classpath:logback-monomer.xml
+  path: ./logs/monomer
