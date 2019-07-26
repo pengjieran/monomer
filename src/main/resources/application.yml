@@ -1,12 +1,43 @@
 spring:
-  datasource:    hikari:      username: root
+  datasource:
+    druid:
+      name: monomer
+      db-type: mysql
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      enable: true
+      username: root
       password: 123456
-      jdbc-url: jdbc:mysql://127.0.0.1:3306/test
-      auto-commit: false
-      driver-class-name: com.mysql.jdbc.Driver
-  profiles:    active:    - dev
+      url: jdbc:mysql://127.0.0.1:3306/test?serverTimezone=GMT%2B8
+      defaultAutoCommit: false
+      initialSize: 10
+      maxActive: 100
+      minIdle: 10
+      maxWait: 6000
+      timeBetweenEvictionRunsMillis: 6000
+      minEvictableIdleTimeMillis: 300000
+      poolPreparedStatements: true
+      maxPoolPreparedStatementPerConnectionSize: 10000
+      filters: stat,wall
+      useGlobalDataSourceStat: true
+      stat-view-servlet:
+        enabled: true
+        reset-enable: false
+        login-username: pengjieran
+        login-password: Ambow99999999
+        url-pattern: /druid/*
+      web-stat-filter:
+        enabled: true
+        url-pattern: /*
+        exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*"
+  profiles:
+    active:
+    - dev
 
 server:
   max-http-header-size: 100MB
   http2:
     enabled: true
+
+mybatis-plus:
+  global-config:
+    banner: false
