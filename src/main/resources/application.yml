@@ -1,4 +1,7 @@
 spring:
+  security:
+    enable-csrf: true
+    enable: false
   application:
     name: monomer
   datasource:
