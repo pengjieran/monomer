@@ -52,11 +52,9 @@ public class AuthController {
             MultiValueMap<String, ResponseCookie> cookies = exchange.getResponse().getCookies();
             ResponseCookie basicCookie = ResponseCookie.from("E_TOKEN", accountId).path("/").domain("localhost:8080").build();
             cookies.add("E_TOKEN", basicCookie);
-            Result result = new Result("200", "登录成功");
-            result.add(accountId);
-            return Mono.just(result);
+            return Mono.just(Result.succeed(accountId));
         }
 
-        return Mono.just(new Result("401", "登录验证未通过！"));
+        return Mono.just(Result.error("401", "登录失败"));
     }
 }

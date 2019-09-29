@@ -24,6 +24,23 @@ public class Result<T> {
 
     private List<T> result = new ArrayList<>();
 
+    public static Result succeed(Object t) {
+
+        Result result = new Result("200", "成功");
+        result.add(t);
+        return result;
+    }
+
+    public static Result error(String code, String message) {
+
+        Result result = new Result();
+        result.setCode(code);
+        result.setMessage(message);
+        return result;
+    }
+
+    public Result() {}
+
     public Result(String code, String message) {
         this.code = code;
         this.message = message;

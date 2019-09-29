@@ -1,12 +1,7 @@
 
 package com.examplecn.model;
 
-import io.netty.handler.codec.http.cookie.Cookie;
 import io.netty.handler.codec.http.cookie.DefaultCookie;
-import lombok.Builder;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.experimental.Accessors;
 
 /**
  * @Description: (这里用一句话描述这个类的作用)
