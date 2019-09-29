@@ -1,6 +1,7 @@
 package com.examplecn.controller;
 
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.examplecn.entity.Account;
 import com.examplecn.model.Result;
 import com.examplecn.service.AccountService;
@@ -32,7 +33,9 @@ public class AccountController {
     @GetMapping
     public Mono<Result> query() {
 
-        List<Account> accounts = accountService.list(accountService.query());
+        QueryWrapper<Account> queryWrapper = new QueryWrapper<>();
+
+        List<Account> accounts = accountService.list(queryWrapper);
         Result result = new Result("200", "操作成功");
         result.setResult(accounts);
         return Mono.just(result);

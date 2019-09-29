@@ -50,7 +50,7 @@ public class AuthController {
         if (StringUtils.isNotBlank(accountId)) {
 
             MultiValueMap<String, ResponseCookie> cookies = exchange.getResponse().getCookies();
-            ResponseCookie basicCookie = ResponseCookie.from("E_TOKEN", accountId).build();
+            ResponseCookie basicCookie = ResponseCookie.from("E_TOKEN", accountId).path("/").domain("localhost:8080").build();
             cookies.add("E_TOKEN", basicCookie);
             Result result = new Result("200", "登录成功");
             result.add(accountId);

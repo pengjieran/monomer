@@ -13,7 +13,7 @@ import org.springframework.web.reactive.config.EnableWebFlux;
 public class WebConfig {
 
     @Bean
-    CorsWebFilter corsFilter() {
+    public CorsWebFilter corsFilter() {
 
         CorsConfiguration config = new CorsConfiguration();
 
@@ -23,7 +23,7 @@ public class WebConfig {
         config.addAllowedMethod("*");
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/**", config);
+        source.registerCorsConfiguration("/*", config);
 
         return new CorsWebFilter(source);
     }
