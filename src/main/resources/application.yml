@@ -28,7 +28,6 @@ spring:
       database: 1
       host: 127.0.0.1
       port: 6379
-      #password: Ambow99999999
       timeout: 3600
       lettuce:
         pool:
