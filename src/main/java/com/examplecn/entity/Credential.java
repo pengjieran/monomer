@@ -25,7 +25,7 @@ public class Credential implements Serializable {
 
     private static final long serialVersionUID=1L;
 
-    @TableId(value = "id", type = IdType.ID_WORKER_STR)
+    @TableId(value = "id", type = IdType.ID_WORKER)
     private Long id;
 
     @TableField("account_id")
@@ -39,7 +39,6 @@ public class Credential implements Serializable {
 
     @TableField("actived")
     private Boolean actived;
-
 
     public static final String ID = "id";
 

@@ -6,6 +6,8 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import java.time.LocalDateTime;
 import com.baomidou.mybatisplus.annotation.TableField;
 import java.io.Serializable;
+import java.util.Date;
+
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -26,7 +28,7 @@ public class Account implements Serializable {
 
     private static final long serialVersionUID=1L;
 
-    @TableId(value = "id", type = IdType.ID_WORKER_STR)
+    @TableId(value = "id", type = IdType.ID_WORKER)
     private Long id;
 
     @TableField("name")
@@ -39,7 +41,7 @@ public class Account implements Serializable {
     private String gender;
 
     @TableField("birthday")
-    private LocalDateTime birthday;
+    private Date birthday;
 
 
     public static final String ID = "id";

@@ -13,4 +13,9 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface CredentialService extends IService<Credential> {
 
+    Credential findByUsername(String username);
+
+    String login(String username, String password);
+
+    boolean add(String username, String password, Long accountId);
 }

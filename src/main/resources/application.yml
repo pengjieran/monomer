@@ -1,6 +1,6 @@
 spring:
   security:
-    enable-csrf: true
+    enable-csrf: false
     enable: false
   application:
     name: monomer
@@ -12,7 +12,7 @@ spring:
       enable: true
       username: root
       password: 123456
-      url: jdbc:mysql://127.0.0.1:3306/test?serverTimezone=GMT%2B8
+      url: jdbc:mysql://127.0.0.1:3306/monomer?serverTimezone=GMT%2B8
       defaultAutoCommit: false
       initialSize: 10
       maxActive: 100
@@ -24,21 +24,11 @@ spring:
       maxPoolPreparedStatementPerConnectionSize: 10000
       filters: stat,wall
       useGlobalDataSourceStat: true
-      stat-view-servlet:
-        enabled: true
-        reset-enable: false
-        login-username: pengjieran
-        login-password: Ambow99999999
-        url-pattern: /druid/*
-      web-stat-filter:
-        enabled: true
-        url-pattern: /*
-        exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*"
     redis:
       database: 1
-      host: 10.10.113.47
+      host: 127.0.0.1
       port: 6379
-      password: Ambow99999999
+      #password: Ambow99999999
       timeout: 3600
       lettuce:
         pool:

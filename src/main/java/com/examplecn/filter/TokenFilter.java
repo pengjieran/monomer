@@ -1,3 +1,4 @@
+/*
 package com.examplecn.filter;
 
 import cn.hutool.core.collection.CollectionUtil;
@@ -20,6 +21,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
+
+//无状态方式校验token数据是否正确
 
 @Component
 public class TokenFilter implements WebFilter, Ordered {
@@ -68,3 +71,4 @@ public class TokenFilter implements WebFilter, Ordered {
         return response.setComplete();
     }
 }
+*/
