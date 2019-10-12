@@ -5,16 +5,14 @@ import com.examplecn.entity.Account;
 import com.examplecn.model.LoginBody;
 import com.examplecn.model.Result;
 import com.examplecn.service.AccountService;
+import com.examplecn.service.AsyncService;
 import com.examplecn.service.CredentialService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseCookie;
 import org.springframework.util.MultiValueMap;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
 
@@ -32,6 +30,16 @@ public class AuthController {
 
     @Autowired
     private AccountService accountService;
+
+    @Autowired
+    private AsyncService asyncService;
+
+    @GetMapping(value = "/index")
+    public void index() {
+
+        asyncService.syncCall();
+        System.out.println("执行前端结束");
+    }
 
     @PostMapping(value = "/register")
     public Mono<Result> register(@RequestBody LoginBody body) {
